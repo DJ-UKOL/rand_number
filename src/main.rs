@@ -16,6 +16,8 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
+        if guess.trim().to_lowercase().eq("exit") {break;}  // выход из программы exit
+
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
